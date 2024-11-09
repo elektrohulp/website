@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8" />
+    <title>ElektroHulp - Uw Digitale Coach voor een Verbonden Leven</title>
+    <meta content="ElektroHulp biedt persoonlijke digitale ondersteuning aan huis. Wij helpen u met computers, smartphones en tablets." name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="ElektroHulp - Uw Digitale Coach" />
+    <meta property="og:description" content="Persoonlijke digitale ondersteuning aan huis. Wij helpen u met computers, smartphones en tablets." />
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+    <meta property="og:url" content="https://elektrohulp.com" />
+    
+    <!-- Theme favicon -->
+    <link rel="shortcut icon" href="/elektrohulp/assets/favicon-ByuwSyI9.ico" />
+    
+    <!-- Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script type="module" crossorigin src="/elektrohulp/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+  <script type="module" crossorigin src="/elektrohulp/assets/app--DJhaHx7.js"></script>
+  <link rel="stylesheet" crossorigin href="/elektrohulp/assets/app-DdCTUlnT.css">
+</head>
+<body>
+    <div class="bg-neutral py-1.5 text-center text-xs text-neutral-content md:text-sm">
+      <span>
+        Speciale Aanbieding: 
+        <span class="font-semibold text-warning">10% Korting</span>
+        op uw eerste afspraak bij ElektroHulp 🎉
+      </span>
+    </div>
+    
+    <div
+      id="navbar-wrapper"
+      class="sticky top-0 z-10 border-b bg-base-100 lg:bg-opacity-95 lg:backdrop-blur-sm"
+      x-data="{ atTop: false }"
+      :class="{ 'border-base-content/10': atTop, 'border-transparent': !atTop}"
+      @scroll.window="atTop = (window.pageYOffset < 30) ? false: true">
+      <div class="container">
+        <nav class="navbar px-0">
+          <div class="navbar-start gap-2">
+            <div class="flex-none lg:hidden">
+              <label for="my-drawer" id="my-drawer-trigger" aria-label="open sidebar" class="btn btn-square btn-ghost">
+                <i class="icon-menu inline-block text-xl"></i>
+              </label>
+            </div>
+    
+            <!-- Navbar Brand logo -->
+            <a href="/" class="text-xl font-bold tracking-tighter">ElektroHulp</a>
+          </div>
+    
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal menu-sm gap-2 px-1">
+              <li class="font-medium"><a href="/">Home</a></li>
+              <li class="font-medium"><a href="/over-ons.html">Over Ons</a></li>
+              <li class="font-medium"><a href="/diensten.html">Diensten</a></li>
+              <li class="font-medium"><a href="/pakketten.html">Pakketten</a></li>
+              <li class="font-medium"><a href="/hoe-werkt-het.html">Hoe Werkt Het</a></li>
+              <li class="font-medium"><a href="/mentoren.html">Onze Mentoren</a></li>
+              <li class="font-medium"><a href="/getuigenissen.html">Getuigenissen</a></li>
+              <li class="font-medium"><a href="/contact.html">Contact</a></li>
+              <li class="font-medium"><a href="/blog">Blog</a></li>
+            </ul>
+          </div>
+    
+          <div class="navbar-end gap-3">
+            <a class="btn btn-ghost btn-sm" onclick="register_modal.showModal()">Register</a>
+            <a class="btn btn-primary btn-sm" onclick="login_modal.showModal()">Login</a>
+          </div>
+        </nav>
+    
+        <!-- sm screen menu (drawer) -->
+        <div class="drawer">
+          <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-side">
+            <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+    
+            <ul class="menu min-h-full w-80 gap-2 bg-base-100 p-4 text-base-content">
+              <!-- Navbar Brand logo -->
+              <li class="font-medium">
+                <a href="/" class="text-xl font-bold">ElektroHulp</a>
+              </li>
+    
+              <li class="font-medium"><a href="/">Home</a></li>
+              <li class="font-medium"><a href="/over-ons.html">Over Ons</a></li>
+              <li class="font-medium"><a href="/diensten.html">Diensten</a></li>
+              <li class="font-medium"><a href="/pakketten.html">Pakketten</a></li>
+              <li class="font-medium"><a href="/hoe-werkt-het.html">Hoe Werkt Het</a></li>
+              <li class="font-medium"><a href="/mentoren.html">Onze Mentoren</a></li>
+              <li class="font-medium"><a href="/getuigenissen.html">Getuigenissen</a></li>
+              <li class="font-medium"><a href="/contact.html">Contact</a></li>
+              <li class="font-medium"><a href="/blog">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+    
+        <dialog id="login_modal" class="modal">
+          <div class="modal-box md:max-w-sm max-w-xs">
+            <div class="text-center">
+            <h3 class="font-semibold text-xl">Login</h3>
+            </div>
+    
+            <div>
+              <div class="form-control mt-6">
+                <label class="label" for="login_email">
+                  <span class="label-text  font-medium">Email</span>
+                </label>
+                <input
+                        autocomplete="email"
+                        id="login_email"
+                        class="input join-item input-bordered w-full input-sm"
+                        placeholder="name@daisyui.com"
+                        type="email"
+                        required />
+              </div>
+              <div class="form-control mt-2">
+                <label class="label" for="login_password">
+                  <span class="label-text font-medium">Password</span>
+                </label>
+                <input
+                        autocomplete="password"
+                        id="login_password"
+                        class="input join-item input-bordered w-full input-sm"
+                        placeholder="It's top secret"
+                        type="password"
+                        required />
+                <div class="label">
+                  <span class="label-text-alt"></span>
+                  <span class="label-text-alt"><a href="#" class="text-base-content/80">Forgot password?</a></span>
+                </div>
+              </div>
+              <div class="flex items-center justify-end mt-3 gap-3">
+                <button class="btn  btn-sm ">
+                  Register
+                </button> <button class="btn  btn-sm btn-primary">
+                  Login
+                </button>
+              </div>
+              <div class="flex items-center gap-3 mt-6">
+                <hr class="border-base-content/5 grow"/>
+                <span class="text-base-content/70">Continue with</span>
+                <hr class="border-base-content/5 grow"/>
+              </div>
+    
+              <div class="flex mt-6 gap-4">
+                <button class="btn block btn-sm grow">
+                  Google
+                </button>
+                <button class="btn block btn-sm grow btn-neutral">
+                  Github
+                </button>
+              </div>
+            </div>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
+    
+        <dialog id="register_modal" class="modal">
+          <div class="modal-box md:max-w-sm max-w-xs">
+            <div class="text-center">
+            <h3 class="font-semibold text-xl">Register</h3>
+            </div>
+    
+            <div>
+              <div class="form-control mt-6">
+                <label class="label" for="register_username">
+                  <span class="label-text  font-medium">Username</span>
+                </label>
+                <input
+                        autocomplete="name"
+                        id="register_username"
+                        class="input join-item input-bordered w-full input-sm"
+                        placeholder="saadeghi"
+                        type="text"
+                        required />
+              </div>
+              <div class="form-control mt-2">
+                <label class="label" for="register_email">
+                  <span class="label-text  font-medium">Email</span>
+                </label>
+                <input
+                        autocomplete="email"
+                        id="register_email"
+                        class="input join-item input-bordered w-full input-sm"
+                        placeholder="name@daisyui.com"
+                        type="email"
+                        required />
+              </div>
+              <div class="form-control mt-2">
+                <label class="label" for="register_password">
+                  <span class="label-text font-medium">Password</span>
+                </label>
+                <input
+                        autocomplete="password"
+                        id="register_password"
+                        class="input join-item input-bordered w-full input-sm"
+                        placeholder="It's secret"
+                        type="password"
+                        required />
+                <div class="label">
+                  <span class="label-text-alt text-base-content/70 text-xs">Min 8 letters required</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-end mt-3  gap-3">
+                 <button class="btn btn-sm btn-primary">
+                Register
+                </button>
+              </div>
+              <div class="flex items-center gap-3 mt-6">
+                <hr class="border-base-content/5 grow"/>
+                <span class="text-base-content/70">Continue with</span>
+                <hr class="border-base-content/5 grow"/>
+              </div>
+    
+              <div class="flex mt-6 gap-4">
+                <button class="btn block btn-sm grow">
+                  Google
+                </button>
+                <button class="btn block btn-sm grow btn-neutral">
+                  Github
+                </button>
+              </div>
+            </div>
+    
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
+      </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="bg-base-200 py-12">
+        <div class="container">
+            <h1 class="text-4xl font-bold">Algemene Voorwaarden</h1>
+            <p class="mt-4 text-lg">Onze afspraken en werkwijze</p>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="py-8 lg:py-20">
+        <div class="container">
+            <div class="prose prose-lg max-w-3xl mx-auto">
+                <p class="lead">
+                    Deze algemene voorwaarden zijn van toepassing op alle diensten van ElektroHulp. 
+                    Door gebruik te maken van onze diensten gaat u akkoord met deze voorwaarden.
+                </p>
+
+                <h2>1. Definities</h2>
+                <ul>
+                    <li><strong>ElektroHulp:</strong> gevestigd te [Adres], KvK nummer [nummer]</li>
+                    <li><strong>Klant:</strong> de natuurlijke of rechtspersoon die diensten afneemt</li>
+                    <li><strong>Diensten:</strong> alle door ElektroHulp aangeboden diensten</li>
+                </ul>
+
+                <h2>2. Toepasselijkheid</h2>
+                <p>
+                    Deze voorwaarden zijn van toepassing op alle overeenkomsten tussen ElektroHulp en de klant, 
+                    tenzij uitdrukkelijk schriftelijk anders is overeengekomen.
+                </p>
+
+                <h2>3. Dienstverlening</h2>
+                <p>
+                    ElektroHulp verplicht zich tot het leveren van de overeengekomen diensten naar beste 
+                    inzicht en vermogen. Alle diensten worden uitgevoerd op basis van een 
+                    inspanningsverbintenis.
+                </p>
+
+                <h2>4. Afspraken en Annulering</h2>
+                <ul>
+                    <li>Afspraken worden in overleg ingepland</li>
+                    <li>Kosteloos annuleren kan tot 24 uur voor de afspraak</li>
+                    <li>Bij latere annulering wordt 50% van het tarief in rekening gebracht</li>
+                    <li>Bij no-show wordt het volledige tarief berekend</li>
+                </ul>
+
+                <h2>5. Tarieven en Betaling</h2>
+                <ul>
+                    <li>Alle genoemde tarieven zijn inclusief BTW</li>
+                    <li>Betaling dient binnen 14 dagen na factuurdatum te geschieden</li>
+                    <li>Reiskosten kunnen apart in rekening worden gebracht</li>
+                </ul>
+
+                <h2>6. Aansprakelijkheid</h2>
+                <p>
+                    ElektroHulp is niet aansprakelijk voor schade die voortvloeit uit het gebruik van 
+                    apparatuur of software, tenzij er sprake is van opzet of grove schuld.
+                </p>
+
+                <h2>7. Garantie</h2>
+                <p>
+                    Op alle uitgevoerde werkzaamheden geldt een garantietermijn van 30 dagen. Deze garantie 
+                    betreft de uitgevoerde werkzaamheden, niet de apparatuur zelf.
+                </p>
+
+                <h2>8. Privacy en Gegevensverwerking</h2>
+                <p>
+                    ElektroHulp verwerkt persoonsgegevens conform de privacyverklaring, te vinden op 
+                    <a href="/privacy.html">onze website</a>.
+                </p>
+
+                <h2>9. Intellectueel Eigendom</h2>
+                <p>
+                    Alle door ElektroHulp verstrekte documenten en materialen blijven intellectueel 
+                    eigendom van ElektroHulp.
+                </p>
+
+                <h2>10. Klachten</h2>
+                <p>
+                    Klachten over de dienstverlening dienen binnen 14 dagen na uitvoering schriftelijk 
+                    te worden gemeld. ElektroHulp zal binnen 14 dagen reageren.
+                </p>
+
+                <h2>11. Wijzigingen</h2>
+                <p>
+                    ElektroHulp behoudt zich het recht voor deze voorwaarden te wijzigen. Wijzigingen 
+                    worden 30 dagen voor inwerkingtreding aangekondigd.
+                </p>
+
+                <h2>12. Contact</h2>
+                <p>Voor vragen over deze voorwaarden kunt u contact opnemen via:</p>
+                <ul>
+                    <li>Email: info@elektrohulp.com</li>
+                    <li>Telefoon: [Telefoonnummer]</li>
+                    <li>Post: [Adres]</li>
+                </ul>
+
+                <div class="alert alert-info mt-8">
+                    <i class="icon-info-circle"></i>
+                    <span>
+                        Deze algemene voorwaarden zijn voor het laatst aangepast op [Datum].
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="bg-base-200 py-8">
+        <div class="container text-center">
+            <h2 class="text-2xl font-semibold">Heeft u vragen?</h2>
+            <p class="mt-4">Neem gerust contact met ons op</p>
+            <a href="/contact.html" class="btn btn-primary mt-8">Contact Opnemen</a>
+        </div>
+    </section>
+
+    <footer class="bg-neutral text-neutral-content" data-theme="dark">
+      <div class="grid lg:grid-cols-2">
+        <div>
+          <div class="md-12 border-y border-e border-white/20 p-8 sm:p-10 md:px-16 xl:px-40 xl:py-16">
+            <div class="grid grid-cols-2">
+              <p class="text-xl font-semibold">ElektroHulp</p>
+              <p class="text-base">Uw digitale coach voor een verbonden leven.</p>
+            </div>
+          </div>
+    
+          <div class="md-12 border-e border-white/20 p-8 sm:p-10 md:px-16 xl:px-40 xl:py-16">
+            <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+              <div class="flex flex-col gap-5">
+                <h2 class="text-xl font-medium">Menu</h2>
+                <div class="space-y-2">
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/">Home</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/over-ons.html">Over Ons</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/diensten.html">Diensten</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/pakketten.html">Pakketten</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/hoe-werkt-het.html">Hoe Werkt Het</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/mentoren.html">Onze Mentoren</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/getuigenissen.html">Getuigenissen</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/contact.html">Contact</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/blog">Blog</a></div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5">
+                <h2 class="text-xl font-medium">Diensten</h2>
+                <div class="space-y-2">
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/diensten.html#training">Training</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/diensten.html#installatie">Installatie</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/diensten.html#ondersteuning">Ondersteuning</a></div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5">
+                <h2 class="text-xl font-medium">Contact</h2>
+                <div class="space-y-2">
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="tel:+31612345678">06-12345678</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="mailto:info@elektrohulp.com">info@elektrohulp.com</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/privacy">Privacy</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/voorwaarden">Voorwaarden</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="order-first lg:order-last">
+          <form class="md-12 border-t border-white/20 p-8 sm:p-10 md:px-16 xl:px-40 xl:py-16">
+            <div class="badge badge-ghost">Contact</div>
+            <h2 class="mt-4 text-3xl font-medium">Hulp nodig?</h2>
+            <div class="mt-4 space-y-2">
+              <div class="form-control w-full lg:max-w-xs">
+                <label class="label" for="name">
+                  <span class="label-text">Naam</span>
+                </label>
+                <input
+                  autocomplete="name"
+                  id="name"
+                  class="input input-bordered w-full lg:max-w-xs"
+                  placeholder="Uw naam"
+                  type="text"
+                  required />
+              </div>
+              <div class="form-control w-full lg:max-w-xs">
+                <label class="label" for="email">
+                  <span class="label-text">Email</span>
+                </label>
+                <input
+                  autocomplete="email"
+                  id="email"
+                  class="input join-item input-bordered w-full lg:max-w-xs"
+                  placeholder="uw@email.nl"
+                  type="email"
+                  required />
+              </div>
+            </div>
+    
+            <div class="mt-6 flex items-center gap-2">
+              <button class="btn btn-primary">Neem Contact Op</button>
+              <a href="tel:+31612345678" class="btn btn-ghost inline-flex items-center gap-2">
+                <i class="icon-phone text-xl"></i>
+                <span>Bel Direct</span>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    
+      <div class="border-t border-white/20 px-8 py-4 text-center lg:px-40">
+        © 2024 ElektroHulp - Uw digitale coach voor een verbonden leven
+      </div>
+    </footer>
+    
+</body>
+</html> 

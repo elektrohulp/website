@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="nl" data-theme="garden">
+<head>
+    {{> title-meta}}
+</head>
+<body>
+    {{> topbar}}
+    
+    <!-- Blog Header -->
+    <section class="bg-base-200 py-12">
+        <div class="container">
+            <h1 class="text-4xl font-bold">Handige Artikelen en Tips</h1>
+            <p class="mt-4 text-lg">Praktische informatie om u te helpen in de digitale wereld</p>
+        </div>
+    </section>
+
+    <!-- Blog Articles -->
+    <section class="py-8 lg:py-20">
+        <div class="container">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Article 1 -->
+                <article class="card bg-base-100">
+                    <figure class="aspect-video">
+                        <img src="/assets/images/blog/online-banking.jpg" alt="Veilig online bankieren" class="h-full w-full object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <div class="badge badge-primary">Veiligheid</div>
+                        <h2 class="card-title mt-2">Veilig Online Bankieren</h2>
+                        <p>Leer hoe u veilig kunt bankieren en uw gegevens beschermt met deze praktische tips.</p>
+                        <div class="card-actions mt-4">
+                            <a href="/blog/veilig-online-bankieren.html" class="btn btn-primary">Lees Meer</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="card bg-base-100">
+                    <figure class="aspect-video">
+                        <img src="/assets/images/blog/video-calling.jpg" alt="Videobellen met familie" class="h-full w-full object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <div class="badge badge-primary">Communicatie</div>
+                        <h2 class="card-title mt-2">Videobellen met Familie</h2>
+                        <p>Stapsgewijze handleiding voor het gebruik van populaire videobel-apps zoals WhatsApp en Zoom.</p>
+                        <div class="card-actions mt-4">
+                            <a href="/blog/videobellen-met-familie.html" class="btn btn-primary">Lees Meer</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="card bg-base-100">
+                    <figure class="aspect-video">
+                        <img src="/assets/images/blog/smart-home.jpg" alt="Smart home technologie" class="h-full w-full object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <div class="badge badge-primary">Smart Home</div>
+                        <h2 class="card-title mt-2">Introductie tot Smart Home</h2>
+                        <p>Ontdek hoe slimme apparaten uw leven kunnen vereenvoudigen en comfort kunnen verhogen.</p>
+                        <div class="card-actions mt-4">
+                            <a href="/blog/smart-home-introductie.html" class="btn btn-primary">Lees Meer</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="card bg-base-100">
+                    <figure class="aspect-video">
+                        <img src="/assets/images/blog/fraud-prevention.jpg" alt="Online fraude herkennen" class="h-full w-full object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <div class="badge badge-primary">Veiligheid</div>
+                        <h2 class="card-title mt-2">Herkennen van Online Fraude</h2>
+                        <p>Tips om oplichting te herkennen en te vermijden in de digitale wereld.</p>
+                        <div class="card-actions mt-4">
+                            <a href="/blog/online-fraude-herkennen.html" class="btn btn-primary">Lees Meer</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="card bg-base-100">
+                    <figure class="aspect-video">
+                        <img src="/assets/images/blog/useful-apps.jpg" alt="Handige apps voor senioren" class="h-full w-full object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <div class="badge badge-primary">Apps</div>
+                        <h2 class="card-title mt-2">Top 5 Apps voor Senioren</h2>
+                        <p>Onze aanbevelingen voor handige en gebruiksvriendelijke apps voor dagelijks gebruik.</p>
+                        <div class="card-actions mt-4">
+                            <a href="/blog/top-5-apps-senioren.html" class="btn btn-primary">Lees Meer</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="bg-base-200 py-12">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="text-3xl font-semibold">Blijf op de Hoogte</h2>
+                <p class="mt-4">Ontvang maandelijks handige tips en updates</p>
+                <form class="mt-8 flex flex-col items-center gap-4">
+                    <div class="form-control w-full max-w-md">
+                        <input 
+                            type="email" 
+                            placeholder="Uw e-mailadres" 
+                            class="input input-bordered w-full" 
+                            required 
+                        />
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Inschrijven voor Nieuwsbrief
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    {{> footer}}
+    
+</body>
+</html> 

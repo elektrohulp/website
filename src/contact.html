@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="nl" data-theme="garden">
+<head>
+    {{> title-meta}}
+</head>
+<body>
+    {{> topbar}}
+
+    <!-- Page Header -->
+    <section class="bg-base-200 py-12">
+        <div class="container">
+            <h1 class="text-4xl font-bold">Contact</h1>
+            <p class="mt-4 text-lg">Neem contact op voor een vrijblijvend gesprek</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-8 lg:py-20">
+        <div class="container">
+            <div class="grid gap-12 lg:grid-cols-2">
+                <!-- Contact Information -->
+                <div>
+                    <h2 class="text-3xl font-semibold">Hoe kunnen we u helpen?</h2>
+                    <p class="mt-4 text-lg">
+                        Heeft u vragen over onze diensten of wilt u een afspraak maken? 
+                        Neem gerust contact met ons op. We reageren meestal binnen 24 uur.
+                    </p>
+
+                    <div class="mt-8 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="rounded-full bg-primary/10 p-3">
+                                <i class="icon-phone text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Telefoon</h3>
+                                <a href="tel:+31612345678" class="text-primary hover:underline">06-12345678</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="rounded-full bg-primary/10 p-3">
+                                <i class="icon-mail text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Email</h3>
+                                <a href="mailto:info@elektrohulp.com" class="text-primary hover:underline">info@elektrohulp.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="rounded-full bg-primary/10 p-3">
+                                <i class="icon-clock text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Openingstijden</h3>
+                                <p>Maandag t/m Vrijdag: 9:00 - 17:00</p>
+                                <p>Weekend: Op afspraak</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="rounded-full bg-primary/10 p-3">
+                                <i class="icon-map-pin text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Werkgebied</h3>
+                                <p>Heel Nederland, aan huis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="mt-12">
+                        <h3 class="font-semibold">Volg ons</h3>
+                        <div class="mt-4 flex gap-4">
+                            <a href="#" class="btn btn-circle btn-ghost">
+                                <i class="icon-facebook text-xl"></i>
+                            </a>
+                            <a href="#" class="btn btn-circle btn-ghost">
+                                <i class="icon-linkedin text-xl"></i>
+                            </a>
+                            <a href="#" class="btn btn-circle btn-ghost">
+                                <i class="icon-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card border border-base-content/10 p-6">
+                    <h2 class="text-2xl font-semibold">Stuur ons een bericht</h2>
+                    <form class="mt-6 space-y-4">
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="form-control w-full">
+                                <label class="label" for="contact-name">
+                                    <span class="label-text">Naam</span>
+                                    <span class="label-text-alt text-error">*</span>
+                                </label>
+                                <input
+                                    id="contact-name"
+                                    type="text"
+                                    class="input input-bordered w-full"
+                                    placeholder="Uw naam"
+                                    required
+                                />
+                            </div>
+
+                            <div class="form-control w-full">
+                                <label class="label" for="contact-phone">
+                                    <span class="label-text">Telefoon</span>
+                                    <span class="label-text-alt text-error">*</span>
+                                </label>
+                                <input
+                                    id="contact-phone"
+                                    type="tel"
+                                    class="input input-bordered w-full"
+                                    placeholder="06-12345678"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-control w-full">
+                            <label class="label" for="contact-email">
+                                <span class="label-text">Email</span>
+                                <span class="label-text-alt text-error">*</span>
+                            </label>
+                            <input
+                                id="contact-email"
+                                type="email"
+                                class="input input-bordered w-full"
+                                placeholder="uw@email.nl"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-control w-full">
+                            <label class="label" for="contact-subject">
+                                <span class="label-text">Onderwerp</span>
+                            </label>
+                            <select id="contact-subject" class="select select-bordered w-full">
+                                <option value="">Selecteer een onderwerp</option>
+                                <option value="afspraak">Afspraak maken</option>
+                                <option value="informatie">Informatie aanvragen</option>
+                                <option value="prijzen">Vraag over prijzen</option>
+                                <option value="anders">Anders</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control w-full">
+                            <label class="label" for="contact-message">
+                                <span class="label-text">Bericht</span>
+                                <span class="label-text-alt text-error">*</span>
+                            </label>
+                            <textarea
+                                id="contact-message"
+                                class="textarea textarea-bordered h-32"
+                                placeholder="Uw vraag of bericht"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label cursor-pointer">
+                                <input type="checkbox" class="checkbox checkbox-primary" required />
+                                <span class="label-text ml-2">
+                                    Ik ga akkoord met de <a href="/privacy.html" class="link link-primary">privacyverklaring</a>
+                                </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Verstuur Bericht
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Preview -->
+    <section class="bg-base-200 py-8 lg:py-20">
+        <div class="container">
+            <h2 class="text-3xl font-semibold text-center">Veelgestelde Vragen</h2>
+            <div class="mt-12 grid gap-4 lg:grid-cols-2">
+                <div class="collapse collapse-plus bg-base-100">
+                    <input type="radio" name="contact-faq" checked="checked" /> 
+                    <div class="collapse-title text-xl font-medium">
+                        Hoe snel kan ik terecht?
+                    </div>
+                    <div class="collapse-content">
+                        <p>We streven ernaar om binnen 24 uur contact met u op te nemen en binnen een week een eerste afspraak in te plannen.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-plus bg-base-100">
+                    <input type="radio" name="contact-faq" />
+                    <div class="collapse-title text-xl font-medium">
+                        Komen jullie ook aan huis?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Ja, wij komen bij u thuis in heel Nederland. Voor bepaalde regio's kan een kleine reiskostenvergoeding worden gerekend.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="/faq.html" class="btn btn-ghost">Bekijk Alle Vragen</a>
+            </div>
+        </div>
+    </section>
+
+    {{> footer}}
+    
+</body>
+</html> 

@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("[data-mobile-menu]"),t=document.querySelector("[data-mobile-menu-content]");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("hidden")})});

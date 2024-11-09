@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="nl" data-theme="garden">
+<head>
+    <meta charset="utf-8" />
+    <title>ElektroHulp - Uw Digitale Coach voor een Verbonden Leven</title>
+    <meta content="ElektroHulp biedt persoonlijke digitale ondersteuning aan huis. Wij helpen u met computers, smartphones en tablets." name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="ElektroHulp - Uw Digitale Coach" />
+    <meta property="og:description" content="Persoonlijke digitale ondersteuning aan huis. Wij helpen u met computers, smartphones en tablets." />
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+    <meta property="og:url" content="https://elektrohulp.com" />
+    
+    <!-- Theme favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    
+    <!-- Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script type="module" crossorigin src="/elektrohulp/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+  <script type="module" crossorigin src="/elektrohulp/assets/app--DJhaHx7.js"></script>
+  <link rel="stylesheet" crossorigin href="/elektrohulp/assets/app-DdCTUlnT.css">
+</head>
+<body>
+    <div class="bg-neutral py-1.5 text-center text-xs text-neutral-content md:text-sm">
+      <span>
+        Speciale Aanbieding: 
+        <span class="font-semibold text-warning">10% Korting</span>
+        op uw eerste afspraak bij ElektroHulp 🎉
+      </span>
+    </div>
+    
+    <div
+      id="navbar-wrapper"
+      class="sticky top-0 z-10 border-b bg-base-100 lg:bg-opacity-95 lg:backdrop-blur-sm"
+      x-data="{ atTop: false }"
+      :class="{ 'border-base-content/10': atTop, 'border-transparent': !atTop}"
+      @scroll.window="atTop = (window.pageYOffset < 30) ? false: true">
+      <div class="container">
+        <nav class="navbar px-0">
+          <div class="navbar-start gap-2">
+            <div class="flex-none lg:hidden">
+              <label for="my-drawer" id="my-drawer-trigger" aria-label="open sidebar" class="btn btn-square btn-ghost">
+                <i class="icon-menu inline-block text-xl"></i>
+              </label>
+            </div>
+    
+            <!-- Navbar Brand logo -->
+            <a href="/" class="text-xl font-bold tracking-tighter">ElektroHulp</a>
+          </div>
+    
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal menu-sm gap-2 px-1">
+              <li class="font-medium"><a href="/">Home</a></li>
+              <li class="font-medium"><a href="/over-ons.html">Over Ons</a></li>
+              <li class="font-medium"><a href="/diensten.html">Diensten</a></li>
+              <li class="font-medium"><a href="/pakketten.html">Pakketten</a></li>
+              <li class="font-medium"><a href="/hoe-werkt-het.html">Hoe Werkt Het</a></li>
+              <li class="font-medium"><a href="/mentoren.html">Onze Mentoren</a></li>
+              <li class="font-medium"><a href="/getuigenissen.html">Getuigenissen</a></li>
+              <li class="font-medium"><a href="/contact.html">Contact</a></li>
+              <li class="font-medium"><a href="/blog">Blog</a></li>
+            </ul>
+          </div>
+    
+          <div class="navbar-end gap-3">
+            <a class="btn btn-ghost btn-sm" onclick="register_modal.showModal()">Register</a>
+            <a class="btn btn-primary btn-sm" onclick="login_modal.showModal()">Login</a>
+          </div>
+        </nav>
+    
+        <!-- sm screen menu (drawer) -->
+        <div class="drawer">
+          <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-side">
+            <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+    
+            <ul class="menu min-h-full w-80 gap-2 bg-base-100 p-4 text-base-content">
+              <!-- Navbar Brand logo -->
+              <li class="font-medium">
+                <a href="/" class="text-xl font-bold">ElektroHulp</a>
+              </li>
+    
+              <li class="font-medium"><a href="/">Home</a></li>
+              <li class="font-medium"><a href="/over-ons.html">Over Ons</a></li>
+              <li class="font-medium"><a href="/diensten.html">Diensten</a></li>
+              <li class="font-medium"><a href="/pakketten.html">Pakketten</a></li>
+              <li class="font-medium"><a href="/hoe-werkt-het.html">Hoe Werkt Het</a></li>
+              <li class="font-medium"><a href="/mentoren.html">Onze Mentoren</a></li>
+              <li class="font-medium"><a href="/getuigenissen.html">Getuigenissen</a></li>
+              <li class="font-medium"><a href="/contact.html">Contact</a></li>
+              <li class="font-medium"><a href="/blog">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+    
+        <dialog id="login_modal" class="modal">
+          <div class="modal-box md:max-w-sm max-w-xs">
+            <div class="text-center">
+            <h3 class="font-semibold text-xl">Login</h3>
+            </div>
+    
+            <div>
+              <div class="form-control mt-6">
+                <label class="label" for="login_email">
+                  <span class="label-text  font-medium">Email</span>
+                </label>
+                <input
+                        autocomplete="email"
+                        id="login_email"
+                        class="input join-item input-bordered w-full input-sm"
+                        placeholder="name@daisyui.com"
+                        type="email"
+                        required />
+              </div>
+              <div class="form-control mt-2">
+                <label class="label" for="login_password">
+                  <span class="label-text font-medium">Password</span>
+                </label>
+                <input
+                        autocomplete="password"
+                        id="login_password"
+                        class="input join-item input-bordered w-full input-sm"
+                        placeholder="It's top secret"
+                        type="password"
+                        required />
+                <div class="label">
+                  <span class="label-text-alt"></span>
+                  <span class="label-text-alt"><a href="#" class="text-base-content/80">Forgot password?</a></span>
+                </div>
+              </div>
+              <div class="flex items-center justify-end mt-3 gap-3">
+                <button class="btn  btn-sm ">
+                  Register
+                </button> <button class="btn  btn-sm btn-primary">
+                  Login
+                </button>
+              </div>
+              <div class="flex items-center gap-3 mt-6">
+                <hr class="border-base-content/5 grow"/>
+                <span class="text-base-content/70">Continue with</span>
+                <hr class="border-base-content/5 grow"/>
+              </div>
+    
+              <div class="flex mt-6 gap-4">
+                <button class="btn block btn-sm grow">
+                  Google
+                </button>
+                <button class="btn block btn-sm grow btn-neutral">
+                  Github
+                </button>
+              </div>
+            </div>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
+    
+        <dialog id="register_modal" class="modal">
+          <div class="modal-box md:max-w-sm max-w-xs">
+            <div class="text-center">
+            <h3 class="font-semibold text-xl">Register</h3>
+            </div>
+    
+            <div>
+              <div class="form-control mt-6">
+                <label class="label" for="register_username">
+                  <span class="label-text  font-medium">Username</span>
+                </label>
+                <input
+                        autocomplete="name"
+                        id="register_username"
+                        class="input join-item input-bordered w-full input-sm"
+                        placeholder="saadeghi"
+                        type="text"
+                        required />
+              </div>
+              <div class="form-control mt-2">
+                <label class="label" for="register_email">
+                  <span class="label-text  font-medium">Email</span>
+                </label>
+                <input
+                        autocomplete="email"
+                        id="register_email"
+                        class="input join-item input-bordered w-full input-sm"
+                        placeholder="name@daisyui.com"
+                        type="email"
+                        required />
+              </div>
+              <div class="form-control mt-2">
+                <label class="label" for="register_password">
+                  <span class="label-text font-medium">Password</span>
+                </label>
+                <input
+                        autocomplete="password"
+                        id="register_password"
+                        class="input join-item input-bordered w-full input-sm"
+                        placeholder="It's secret"
+                        type="password"
+                        required />
+                <div class="label">
+                  <span class="label-text-alt text-base-content/70 text-xs">Min 8 letters required</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-end mt-3  gap-3">
+                 <button class="btn btn-sm btn-primary">
+                Register
+                </button>
+              </div>
+              <div class="flex items-center gap-3 mt-6">
+                <hr class="border-base-content/5 grow"/>
+                <span class="text-base-content/70">Continue with</span>
+                <hr class="border-base-content/5 grow"/>
+              </div>
+    
+              <div class="flex mt-6 gap-4">
+                <button class="btn block btn-sm grow">
+                  Google
+                </button>
+                <button class="btn block btn-sm grow btn-neutral">
+                  Github
+                </button>
+              </div>
+            </div>
+    
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
+      </div>
+    </div>
+    
+    <!-- Article Header -->
+    <section class="bg-base-200 py-12">
+        <div class="container max-w-4xl">
+            <div class="badge badge-primary mb-4">Veiligheid</div>
+            <h1 class="text-4xl font-bold">Herkennen van Online Fraude: Bescherm Uzelf</h1>
+            <p class="mt-4 text-lg">Leer hoe u online oplichting kunt herkennen en voorkomen</p>
+            <div class="mt-6 flex items-center gap-4">
+                <div class="avatar">
+                    <div class="w-12 rounded-full">
+                        <img src="/assets/images/team/lisa.jpg" alt="Lisa Vermeer" />
+                    </div>
+                </div>
+                <div>
+                    <p class="font-medium">Lisa Vermeer</p>
+                    <p class="text-sm text-base-content/70">8 maart 2024 • 9 min leestijd</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-8 lg:py-20">
+        <div class="container max-w-4xl">
+            <div class="prose prose-lg max-w-none">
+                <img 
+                    src="/assets/images/blog/fraud-prevention-header.jpg" 
+                    alt="Online veiligheid en fraudepreventie" 
+                    class="rounded-lg"
+                />
+                
+                <h2>Veelvoorkomende Vormen van Online Fraude</h2>
+                <p>
+                    Oplichters worden steeds slimmer en gebruiken verschillende methoden om 
+                    mensen te misleiden. Hier zijn de meest voorkomende vormen:
+                </p>
+
+                <h3>1. Phishing E-mails</h3>
+                <p>
+                    E-mails die lijken te komen van uw bank of andere bekende bedrijven, 
+                    maar eigenlijk van oplichters zijn.
+                </p>
+                
+                <div class="alert alert-error mt-4">
+                    <i class="icon-alert-triangle text-xl"></i>
+                    <div>
+                        <p class="font-bold">Waarschuwingssignalen:</p>
+                        <ul>
+                            <li>Vreemde afzender e-mailadres</li>
+                            <li>Spelfouten in de tekst</li>
+                            <li>Dringend verzoek om in te loggen</li>
+                            <li>Dreiging met account blokkade</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>2. WhatsApp Fraude</h3>
+                <p>
+                    Oplichters doen zich voor als een familielid met een "nieuw nummer" 
+                    en vragen om geld over te maken.
+                </p>
+
+                <div class="alert alert-warning mt-4">
+                    <i class="icon-warning text-xl"></i>
+                    <p>
+                        <strong>Tip:</strong> Bel altijd het oude, bekende nummer om te 
+                        verifiëren of het bericht echt is.
+                    </p>
+                </div>
+
+                <h3>3. Nepwebshops</h3>
+                <p>
+                    Valse webwinkels die niet-bestaande producten verkopen tegen zeer 
+                    lage prijzen.
+                </p>
+
+                <h2>Zo Beschermt U Zichzelf</h2>
+                <ul>
+                    <li>Klik nooit op links in onverwachte e-mails</li>
+                    <li>Geef nooit uw inloggegevens of pincode door</li>
+                    <li>Bij twijfel: neem contact op met het bedrijf via het officiële nummer</li>
+                    <li>Controleer webwinkels op betrouwbaarheid (keurmerk, reviews)</li>
+                    <li>Gebruik sterke wachtwoorden</li>
+                </ul>
+
+                <div class="alert alert-info mt-8">
+                    <i class="icon-info text-xl"></i>
+                    <p>
+                        <strong>Wist u dit?</strong> Banken vragen nooit om uw pincode 
+                        of om geld over te maken naar een 'veilige rekening'.
+                    </p>
+                </div>
+
+                <h2>Wat te Doen bij Fraude?</h2>
+                <ol>
+                    <li>Neem direct contact op met uw bank</li>
+                    <li>Doe aangifte bij de politie</li>
+                    <li>Verzamel alle bewijsmateriaal (e-mails, screenshots)</li>
+                    <li>Meld het bij <a href="https://www.fraudehelpdesk.nl">Fraudehelpdesk</a></li>
+                </ol>
+
+                <h2>Persoonlijke Hulp</h2>
+                <p>
+                    Wilt u meer leren over online veiligheid? Onze mentoren geven 
+                    persoonlijke uitleg en praktische tips. Neem <a href="/contact.html">contact</a> 
+                    met ons op voor een afspraak.
+                </p>
+            </div>
+
+            <!-- Share Buttons -->
+            <div class="mt-12 flex items-center gap-4">
+                <span class="font-medium">Delen:</span>
+                <button class="btn btn-ghost btn-sm">
+                    <i class="icon-facebook text-lg"></i>
+                    Facebook
+                </button>
+                <button class="btn btn-ghost btn-sm">
+                    <i class="icon-twitter text-lg"></i>
+                    Twitter
+                </button>
+                <button class="btn btn-ghost btn-sm">
+                    <i class="icon-mail text-lg"></i>
+                    Email
+                </button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="bg-base-200 py-12">
+        <div class="container">
+            <h2 class="text-2xl font-semibold">Gerelateerde Artikelen</h2>
+            <div class="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <article class="card bg-base-100">
+                    <div class="card-body">
+                        <div class="badge badge-primary">Veiligheid</div>
+                        <h3 class="card-title mt-2">Veilig Online Bankieren</h3>
+                        <p>Leer hoe u veilig uw bankzaken online kunt regelen.</p>
+                        <div class="card-actions mt-4">
+                            <a href="/blog/veilig-online-bankieren.html" class="btn btn-primary btn-sm">Lees Meer</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-neutral text-neutral-content" data-theme="dark">
+      <div class="grid lg:grid-cols-2">
+        <div>
+          <div class="md-12 border-y border-e border-white/20 p-8 sm:p-10 md:px-16 xl:px-40 xl:py-16">
+            <div class="grid grid-cols-2">
+              <p class="text-xl font-semibold">ElektroHulp</p>
+              <p class="text-base">Uw digitale coach voor een verbonden leven.</p>
+            </div>
+          </div>
+    
+          <div class="md-12 border-e border-white/20 p-8 sm:p-10 md:px-16 xl:px-40 xl:py-16">
+            <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+              <div class="flex flex-col gap-5">
+                <h2 class="text-xl font-medium">Menu</h2>
+                <div class="space-y-2">
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/">Home</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/over-ons.html">Over Ons</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/diensten.html">Diensten</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/pakketten.html">Pakketten</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/hoe-werkt-het.html">Hoe Werkt Het</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/mentoren.html">Onze Mentoren</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/getuigenissen.html">Getuigenissen</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/contact.html">Contact</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/blog">Blog</a></div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5">
+                <h2 class="text-xl font-medium">Diensten</h2>
+                <div class="space-y-2">
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/diensten.html#training">Training</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/diensten.html#installatie">Installatie</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/diensten.html#ondersteuning">Ondersteuning</a></div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5">
+                <h2 class="text-xl font-medium">Contact</h2>
+                <div class="space-y-2">
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="tel:+31612345678">06-12345678</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="mailto:info@elektrohulp.com">info@elektrohulp.com</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/privacy">Privacy</a></div>
+                  <div><a class="text-base transition-all duration-500 hover:text-primary" href="/voorwaarden">Voorwaarden</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="order-first lg:order-last">
+          <form class="md-12 border-t border-white/20 p-8 sm:p-10 md:px-16 xl:px-40 xl:py-16">
+            <div class="badge badge-ghost">Contact</div>
+            <h2 class="mt-4 text-3xl font-medium">Hulp nodig?</h2>
+            <div class="mt-4 space-y-2">
+              <div class="form-control w-full lg:max-w-xs">
+                <label class="label" for="name">
+                  <span class="label-text">Naam</span>
+                </label>
+                <input
+                  autocomplete="name"
+                  id="name"
+                  class="input input-bordered w-full lg:max-w-xs"
+                  placeholder="Uw naam"
+                  type="text"
+                  required />
+              </div>
+              <div class="form-control w-full lg:max-w-xs">
+                <label class="label" for="email">
+                  <span class="label-text">Email</span>
+                </label>
+                <input
+                  autocomplete="email"
+                  id="email"
+                  class="input join-item input-bordered w-full lg:max-w-xs"
+                  placeholder="uw@email.nl"
+                  type="email"
+                  required />
+              </div>
+            </div>
+    
+            <div class="mt-6 flex items-center gap-2">
+              <button class="btn btn-primary">Neem Contact Op</button>
+              <a href="tel:+31612345678" class="btn btn-ghost inline-flex items-center gap-2">
+                <i class="icon-phone text-xl"></i>
+                <span>Bel Direct</span>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    
+      <div class="border-t border-white/20 px-8 py-4 text-center lg:px-40">
+        © 2024 ElektroHulp - Uw digitale coach voor een verbonden leven
+      </div>
+    </footer>
+    
+</body>
+</html> 
