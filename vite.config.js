@@ -13,7 +13,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     }
     return {
         root: "src",
-        base: '/elektrohulp/',
         server: {
             open: true
         },
